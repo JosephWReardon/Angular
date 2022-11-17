@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+<form [formGroup]="loginform" (ngSubmit)="loginuser()">
+  <label>Email Address:</label>
+    <input type="email" ngModel email="true" placeholder="Enter Email" formControlName = "email">
+    <span *ngIf="email?.invalid && email?.touched">Valid Email is required</span>
+  <br><br>
+  <label>Username:</label>
+    <input type="text" placeholder="Enter Name" formControlName = "user">
+    <span *ngIf="user?.invalid && user?.touched">Username is required</span>
+ 
+  <br><br>
+  <label>Phone Number:</label>
+    <input type="text" placeholder="Phone Number" formControlName="passwordConfirmation">
+    <span *ngIf="passwordConfirmation?.invalid && passwordConfirmation?.touched">Phone Number is Required</span>
+
+  <br><br>
+  <label>Password:</label>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+    <span *ngIf="password?.invalid && password?.touched">Password is required</span>
+
+  <br><br>
+  
+  <button>Login</button>
+</form>
